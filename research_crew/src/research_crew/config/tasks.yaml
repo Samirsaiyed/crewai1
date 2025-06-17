@@ -1,0 +1,79 @@
+research_task:
+  description: >
+    Conduct comprehensive research on the topic: {topic}
+
+    Your research should include:
+    - Current trends and developments
+    - Key statistics and data points
+    - Expert opinions and quotes
+    - Real-world examples and case studies
+    - Recent news and updates
+    Focus on finding credible, up-to-date sources and verify information
+    from multiple sources when possible.
+
+  expected_output: >
+    A detailed research report containing:
+    - Executive summary of key findings
+    - 5-7 main insights with supporting data
+    - List of credible sources
+    - Recent statistics and trends
+    - Expert quotes or industry opinions
+  agent: researcher
+  tools:
+    - web_search_tool
+    - web_scraper_tool
+
+writing_task:
+  description: >
+    Using the research provided, create a comprehensive blog post about: {topic}
+
+    Requirements:
+    - Write an engaging headline
+    - Create a compelling introduction
+    - Organize content into 3-4 main sections
+    - Include relevant statistics and examples from research
+    - Write in a conversational, accessible tone
+    - End with actionable takeaways
+    - Target length: 1000-1200 words
+
+  expected_output: >
+     A complete blog post with:
+    - Compelling headline
+    - Well-structured content (intro, body sections, conclusion)
+    - 1000-1200 words
+    - Conversational tone
+    - Data and examples integrated naturally
+    - Clear call-to-action or takeaways
+  agent: writer
+  cotext:
+    - research_task
+
+editing_task:
+  description: >
+    Review and improve the blog post created by the writer.
+
+    Focus on:
+    - Grammar and spelling accuracy
+    - Clarity and readability
+    - Logical flow and structure
+    - Fact-checking against research
+    - Tone consistency
+    - Engagement and impact
+    
+    Provide the final, polished version ready for publication.
+
+  expected_output: >
+    A polished, publication-ready blog post with:
+    - Perfect grammar and spelling
+    - Clear, engaging writing style
+    - Logical structure and flow
+    - Verified facts and statistics
+    - Consistent tone throughout
+    - Strong opening and closing
+
+  agent: editor
+  context: 
+    - research_task
+    - writing_task
+
+  
